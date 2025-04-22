@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2025-04-22 09:19:15 by Eclipse SUMO sumo Version 1.22.0
+<!-- generated on 2025-04-22 09:59:35 by Eclipse SUMO sumo Version 1.22.0
 -->
 
 <sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
         <net-file value="SUMO_bus_lanes.net.xml"/>
+        <additional-files value="SUMO_bus_lanes.add.xml"/>
     </input>
 
 </sumoConfiguration>
