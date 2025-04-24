@@ -17,7 +17,6 @@ def switch_lane_permission(lane_id, allowed_vehicles):
     traci.lane.setAllowed(lane_id, allowed_vehicles)
 
 def reroute_restricted_vehicles(bus_lanes):
-    print(bus_lanes)
     for vehicle_id in traci.vehicle.getIDList():
         vehicle_lane = traci.vehicle.getLaneID(vehicle_id)
         vehicle_type = traci.vehicle.getVehicleClass(vehicle_id)
@@ -29,6 +28,28 @@ def reroute_restricted_vehicles(bus_lanes):
             except:
                 print("Could not reroute ", vehicle_id)
 
+def collect_data(vehicle_data):
+    for vehicle_id in traci.simulation.getArrivedIDList():
+        try:
+            route_length = traci.vehicle.getDistance(vehicle_id)
+            waiting_time = traci.vehicle.getAccumulatedWaitingTime(vehicle_id)
+            passenger_count = traci.vehicle.getPersonNumber(vehicle_id)
+
+            vehicle_data[vehicle_id] = {
+                "route_length": route_length,
+                "waiting_time": waiting_time,
+                "passenger_count": passenger_count
+            }
+        except:
+            route_length = -1
+            waiting_time = -1
+            passenger_count = -1
+
+        if vehicle_id not in vehicle_data:
+            vehicle_data[vehicle_id] = {}
+
+    return vehicle_data      
+
 def main():
     sumoBinary = "sumo-gui"
     step_length = 0.1
@@ -36,8 +57,9 @@ def main():
     traci.start(sumoCmd)
     bus_lanes = get_bus_lanes()
 
+    data = {}
     step = 0
-    while step < 500:
+    while traci.simulation.getMinExpectedNumber() > 0:
         if step >= 100.0 and step <= 101.0:
             print("switching lane permissions")
             for lane in bus_lanes:
@@ -51,7 +73,10 @@ def main():
                 reroute_restricted_vehicles(bus_lanes)
 
         traci.simulationStep()
+        collect_data(data)
         step += step_length
+
+    print(data)
     traci.close()
 
 main()
