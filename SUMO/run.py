@@ -16,7 +16,7 @@ def get_bus_lanes():
 def switch_lane_permission(lane_id, allowed_vehicles):
     traci.lane.setAllowed(lane_id, allowed_vehicles)
 
-def reroute_restricted_vehicles():
+def reroute_restricted_vehicles(bus_lanes):
     print(bus_lanes)
     for vehicle_id in traci.vehicle.getIDList():
         vehicle_lane = traci.vehicle.getLaneID(vehicle_id)
@@ -25,6 +25,7 @@ def reroute_restricted_vehicles():
         if vehicle_lane in bus_lanes and vehicle_type != "bus":
             try:
                 traci.vehicle.rerouteTraveltime(vehicle_id)
+                traci.vehicle.changeLane(vehicle_id, 1, 50)
             except:
                 print("Could not reroute ", vehicle_id)
 
@@ -41,13 +42,16 @@ def main():
             print("switching lane permissions")
             for lane in bus_lanes:
                 switch_lane_permission(lane, ["bus", "passenger"])
+                reroute_restricted_vehicles(bus_lanes)
+
         elif step >= 200.0 and step <= 201.0:
             print("bus lanes are back")
             for lane in bus_lanes:
                 switch_lane_permission(lane, ["bus"])
+                reroute_restricted_vehicles(bus_lanes)
+
         traci.simulationStep()
         step += step_length
     traci.close()
 
-bus_lanes = []
 main()
