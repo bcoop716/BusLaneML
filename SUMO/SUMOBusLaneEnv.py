@@ -13,11 +13,12 @@ class SumoBusLaneEnv(gym.Env):
         self.observation_space = spaces.Box(low=0, high=30000, shape=(10,), dtype=np.float32)
 
         self.step_length = 0.1
-        self.sumo_cmd = ["sumo", "-c", "SUMO_bus_lanes.sumocfg", "--start", "--step-length", str(self.step_length)]
+        self.sumo_cmd = ["sumo", "-c", "low_demand.sumocfg", "--start", "--step-length", str(self.step_length)]
         self.step_count = 0
         self.dispatch_interval = 30  # If you later want to simulate bus dispatch intervals
-
         self.count = 0
+        self.buscount = 0
+        self.carcount = 0
         self.total_distance = 0
         self.total_wait_time = 0
         self.total_passengers = 0
@@ -27,6 +28,8 @@ class SumoBusLaneEnv(gym.Env):
         if traci.isLoaded():
             traci.close()
         traci.start(self.sumo_cmd)
+        self.buscount = 0
+        self.carcount = 0
         self.count = 0
         self.step_count = 0
         self.total_distance = 0
@@ -37,6 +40,7 @@ class SumoBusLaneEnv(gym.Env):
         return self._get_obs()
 
     def step(self, action):
+        #action = 1
         self._apply_action(action)
         
         for vehicle_id in traci.vehicle.getIDList():
@@ -44,12 +48,14 @@ class SumoBusLaneEnv(gym.Env):
                 self.vehicle_data[vehicle_id] = {
                     "route_length": 0,
                     "waiting_time": 0,
-                    "passenger_count": 0
+                    "passenger_count": 0,
+                    "typeofv": "",
                 }
 
             self.vehicle_data[vehicle_id]["route_length"] = traci.vehicle.getDistance(vehicle_id)
             self.vehicle_data[vehicle_id]["waiting_time"] = traci.vehicle.getAccumulatedWaitingTime(vehicle_id)
             self.vehicle_data[vehicle_id]["passenger_count"] = traci.vehicle.getPersonNumber(vehicle_id)
+            self.vehicle_data[vehicle_id]["typeofv"] = traci.vehicle.getTypeID(vehicle_id)
 
         traci.simulationStep()
         self.step_count += 1
@@ -92,14 +98,26 @@ class SumoBusLaneEnv(gym.Env):
     def _collect_metrics(self):
         arrived_vehicles = traci.simulation.getArrivedIDList()
         for vehicle_id in arrived_vehicles:
-            self.count = self.count + 1
-            if vehicle_id in self.vehicle_data:
-                
+            self.count = self.count + 1 #if traci.vehicle.getVehicleClass(vehicle_id) == BUS_CLASS_ID:
+             #   self.buscount = self.buscount + 1
+            #if traci.vehicle.getVehicleClass(vehicle_id) == CAR_CLASS_ID:
+             #       self.carcount = self.carcount + 1
+            #vehicle_class = traci.vehicle.getVehicleClass(vehicle_id)
+            #print(f"Vehicle ID: {vehicle_id}, Class ID: {vehicle_class}")
+            if vehicle_id in self.vehicle_data:                
                 vehicle_info = self.vehicle_data[vehicle_id]
                 self.total_distance += vehicle_info.get("route_length", 0)
                 self.total_wait_time += vehicle_info.get("waiting_time", 0)
                 self.total_passengers += vehicle_info.get("passenger_count", 0)
-
+            #if traci.vehicle.getIDList() and vehicle_id in traci.vehicle.getIDList():
+                #vehicle_class = traci.vehicle.getTypeID(vehicle_id)
+                vehicle_class = vehicle_info.get("typeofv")
+                #self.count = self.count + 1
+                #print(f"Vehicle ID: {vehicle_id}, Class ID: {vehicle_class}")
+                if vehicle_class == "bus":
+                    self.buscount += 1
+                elif vehicle_class == "car":
+                    self.carcount += 1
     def get_bus_lanes(self):
         bus_lanes = []
         network = sumolib.net.readNet("SUMO_bus_lanes.net.xml")

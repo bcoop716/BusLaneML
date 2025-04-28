@@ -7,7 +7,7 @@
 
     <input>
         <net-file value="SUMO_bus_lanes.net.xml"/>
-        <route-files value="low_demand.rou.xml"/>
+        <route-files value="SUMO_bus_lanes.rou.xml"/>
         <additional-files value="SUMO_bus_lanes.add.xml"/>
     </input>
 

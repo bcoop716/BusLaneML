@@ -53,7 +53,7 @@ def collect_data(vehicle_data):
 def main():
     sumoBinary = "sumo-gui"
     step_length = 0.1
-    sumoCmd = [sumoBinary, "-c", "SUMO_bus_lanes.sumocfg", "--delay", "200", "--start", "--step-length", str(step_length)]
+    sumoCmd = [sumoBinary, "-c", "low_demand.sumocfg", "--delay", "200", "--start", "--step-length", str(step_length)]
     traci.start(sumoCmd)
     bus_lanes = get_bus_lanes()
 

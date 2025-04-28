@@ -38,7 +38,9 @@ def train():
         print(f"Episode {episode+1}/{num_episodes} - Total Reward: {total_reward:.2f} - Epsilon: {agent.epsilon:.2f}")
         print(f"Total distance traveled: {env.total_distance}")
         print(f"Total waiting time: {env.total_wait_time}")
-        print(f"Total vehicles: {env.count}")
+        print(f"Total Buses: {env.buscount}")
+        print(f"Total Cars: {env.carcount}")
+        print(f"Total Vehicles {env.count}")
         all_rewards.append(total_reward)
 
     env.close()
