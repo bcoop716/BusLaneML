@@ -1,0 +1,11 @@
+<configuration>
+    <input>
+        <net-file value="SUMO_bus_lanes.net.xml"/>
+        <route-files value="high_demand.rou.xml"/>
+    </input>
+    
+    <time>
+        <begin value="0"/>
+        <end value="3600"/>
+    </time>
+</configuration>

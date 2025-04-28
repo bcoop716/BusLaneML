@@ -1,0 +1,71 @@
+<routes>
+    <!-- Vehicle Types -->
+    <vType id="car" vClass="passenger" accel="2.6" decel="4.5" length="5" maxSpeed="13.9"/>
+    <vType id="bus" vClass="bus" accel="1.3" decel="4.0" length="12" maxSpeed="11.1"/>
+
+    <!-- Flows -->
+    <flow id="mainCarFlowLow" type="car" begin="0" end="3600" number="900" from="E10" to="E15"/>
+    <flow id="mainBusFlowLow" type="bus" begin="0" end="3600" number="90" from="E10" to="E15"/>
+    <flow id="mainCarFlowLowAlt" type="car" begin="0" end="3600" number="900" from="-E15" to="-E10"/>
+    <flow id="mainBusFlowLowAlt" type="bus" begin="0" end="3600" number="90" from="-E15" to="-E10"/>
+    <flow id="cross1CarFlowLow" type="car" begin="0" end="3600" number="225" from="-E11" to="E12"/>
+    <flow id="cross1BusFlowLow" type="bus" begin="0" end="3600" number="23" from="-E11" to="E12"/>
+    <flow id="cross1CarFlowLowAlt" type="car" begin="0" end="3600" number="225" from="-E12" to="E11"/>
+    <flow id="cross1BusFlowLowAlt" type="bus" begin="0" end="3600" number="23" from="-E12" to="E11"/>
+    <flow id="cross2CarFlowLow" type="car" begin="0" end="3600" number="225" from="-E24" to="E25"/>
+    <flow id="cross2BusFlowLow" type="bus" begin="0" end="3600" number="23" from="-E24" to="E25"/>
+    <flow id="cross2CarFlowLowAlt" type="car" begin="0" end="3600" number="225" from="-E25" to="E24"/>
+    <flow id="cross2BusFlowLowAlt" type="bus" begin="0" end="3600" number="23" from="-E25" to="E24"/>
+    <flow id="cross3CarFlowLow" type="car" begin="0" end="3600" number="225" from="-E22" to="E23"/>
+    <flow id="cross3BusFlowLow" type="bus" begin="0" end="3600" number="23" from="-E22" to="E23"/>
+    <flow id="cross3CarFlowLowAlt" type="car" begin="0" end="3600" number="225" from="-E23" to="E22"/>
+    <flow id="cross3BusFlowLowAlt" type="bus" begin="0" end="3600" number="23" from="-E23" to="E22"/>
+    <flow id="rightTurn1CarFlowLow" type="car" begin="0" end="3600" number="45" from="E10" to="E12"/>
+    <flow id="rightTurn1BusFlowLow" type="bus" begin="0" end="3600" number="5" from="E10" to="E12"/>
+    <flow id="rightTurn1CarFlowLowAlt" type="car" begin="0" end="3600" number="45" from="-E12" to="-E10"/>
+    <flow id="rightTurn1BusFlowLowAlt" type="bus" begin="0" end="3600" number="5" from="-E12" to="-E10"/>
+    <flow id="rightTurn2CarFlowLow" type="car" begin="0" end="3600" number="45" from="E10" to="E25"/>
+    <flow id="rightTurn2BusFlowLow" type="bus" begin="0" end="3600" number="5" from="E10" to="E25"/>
+    <flow id="rightTurn2CarFlowLowAlt" type="car" begin="0" end="3600" number="45" from="-E25" to="-E10"/>
+    <flow id="rightTurn2BusFlowLowAlt" type="bus" begin="0" end="3600" number="5" from="-E25" to="-E10"/>
+    <flow id="rightTurn3CarFlowLow" type="car" begin="0" end="3600" number="45" from="E10" to="E22"/>
+    <flow id="rightTurn3BusFlowLow" type="bus" begin="0" end="3600" number="5" from="E10" to="E22"/>
+    <flow id="rightTurn3CarFlowLowAlt" type="car" begin="0" end="3600" number="45" from="-E22" to="-E10"/>
+    <flow id="rightTurn3BusFlowLowAlt" type="bus" begin="0" end="3600" number="5" from="-E22" to="-E10"/>
+    <flow id="rightTurn4CarFlowLow" type="car" begin="0" end="3600" number="45" from="-E15" to="E23"/>
+    <flow id="rightTurn4BusFlowLow" type="bus" begin="0" end="3600" number="5" from="-E15" to="E23"/>
+    <flow id="rightTurn4CarFlowLowAlt" type="car" begin="0" end="3600" number="45" from="-E23" to="E15"/>
+    <flow id="rightTurn4BusFlowLowAlt" type="bus" begin="0" end="3600" number="5" from="-E23" to="E15"/>
+    <flow id="rightTurn5CarFlowLow" type="car" begin="0" end="3600" number="45" from="-E15" to="E24"/>
+    <flow id="rightTurn5BusFlowLow" type="bus" begin="0" end="3600" number="5" from="-E15" to="E24"/>
+    <flow id="rightTurn5CarFlowLowAlt" type="car" begin="0" end="3600" number="45" from="-E24" to="E15"/>
+    <flow id="rightTurn5BusFlowLowAlt" type="bus" begin="0" end="3600" number="5" from="-E24" to="E15"/>
+    <flow id="rightTurn6CarFlowLow" type="car" begin="0" end="3600" number="45" from="-E15" to="E11"/>
+    <flow id="rightTurn6BusFlowLow" type="bus" begin="0" end="3600" number="5" from="-E15" to="E11"/>
+    <flow id="rightTurn6CarFlowLowAlt" type="car" begin="0" end="3600" number="45" from="-E11" to="E15"/>
+    <flow id="rightTurn6BusFlowLowAlt" type="bus" begin="0" end="3600" number="5" from="-E11" to="E15"/>
+    <flow id="leftTurn1CarFlowLow" type="car" begin="0" end="3600" number="45" from="E10" to="E11"/>
+    <flow id="leftTurn1BusFlowLow" type="bus" begin="0" end="3600" number="5" from="E10" to="E11"/>
+    <flow id="leftTurn1CarFlowLowAlt" type="car" begin="0" end="3600" number="45" from="-E11" to="-E10"/>
+    <flow id="leftTurn1BusFlowLowAlt" type="bus" begin="0" end="3600" number="5" from="-E11" to="-E10"/>
+    <flow id="leftTurn2CarFlowLow" type="car" begin="0" end="3600" number="45" from="E10" to="E24"/>
+    <flow id="leftTurn2BusFlowLow" type="bus" begin="0" end="3600" number="5" from="E10" to="E24"/>
+    <flow id="leftTurn2CarFlowLowAlt" type="car" begin="0" end="3600" number="45" from="-E24" to="-E10"/>
+    <flow id="leftTurn2BusFlowLowAlt" type="bus" begin="0" end="3600" number="5" from="-E24" to="-E10"/>
+    <flow id="leftTurn3CarFlowLow" type="car" begin="0" end="3600" number="45" from="E10" to="E23"/>
+    <flow id="leftTurn3BusFlowLow" type="bus" begin="0" end="3600" number="5" from="E10" to="E23"/>
+    <flow id="leftTurn3CarFlowLowAlt" type="car" begin="0" end="3600" number="45" from="-E23" to="-E10"/>
+    <flow id="leftTurn3BusFlowLowAlt" type="bus" begin="0" end="3600" number="5" from="-E23" to="-E10"/>
+    <flow id="leftTurn4CarFlowLow" type="car" begin="0" end="3600" number="45" from="-E15" to="E12"/>
+    <flow id="leftTurn4BusFlowLow" type="bus" begin="0" end="3600" number="5" from="-E15" to="E12"/>
+    <flow id="leftTurn4CarFlowLowAlt" type="car" begin="0" end="3600" number="45" from="-E12" to="E15"/>
+    <flow id="leftTurn4BusFlowLowAlt" type="bus" begin="0" end="3600" number="5" from="-E12" to="E15"/>
+    <flow id="leftTurn5CarFlowLow" type="car" begin="0" end="3600" number="45" from="-E15" to="E25"/>
+    <flow id="leftTurn5BusFlowLow" type="bus" begin="0" end="3600" number="5" from="-E15" to="E25"/>
+    <flow id="leftTurn5CarFlowLowAlt" type="car" begin="0" end="3600" number="45" from="-E25" to="E15"/>
+    <flow id="leftTurn5BusFlowLowAlt" type="bus" begin="0" end="3600" number="5" from="-E25" to="E15"/>
+    <flow id="leftTurn6CarFlowLow" type="car" begin="0" end="3600" number="45" from="-E15" to="E22"/>
+    <flow id="leftTurn6BusFlowLow" type="bus" begin="0" end="3600" number="5" from="-E15" to="E22"/>
+    <flow id="leftTurn6CarFlowLowAlt" type="car" begin="0" end="3600" number="45" from="-E22" to="E15"/>
+    <flow id="leftTurn6BusFlowLowAlt" type="bus" begin="0" end="3600" number="5" from="-E22" to="E15"/>
+</routes>
