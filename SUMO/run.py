@@ -56,6 +56,7 @@ def main():
     sumoCmd = [sumoBinary, "-c", "SUMO_bus_lanes.sumocfg", "--delay", "200", "--start", "--step-length", str(step_length)]
     traci.start(sumoCmd)
     bus_lanes = get_bus_lanes()
+
     data = {}
     step = 0
     while traci.simulation.getMinExpectedNumber() > 0:
@@ -74,7 +75,7 @@ def main():
         traci.simulationStep()
         collect_data(data)
         step += step_length
-    print(step)
+
     print(data)
     traci.close()
 
