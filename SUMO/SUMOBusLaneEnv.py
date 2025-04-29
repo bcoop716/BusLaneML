@@ -85,6 +85,20 @@ class SumoBusLaneEnv(gym.Env):
             allowed = ["bus", "passenger"] if action == 1 else ["bus"]
             for lane in bus_lanes:
                 traci.lane.setAllowed(lane, allowed)
+            if action == 0:
+                for vehicle_id in traci.vehicle.getIDList():
+                    vehicle_lane = traci.vehicle.getLaneID(vehicle_id)
+                    vehicle_type = traci.vehicle.getVehicleClass(vehicle_id)
+
+                    if vehicle_lane in bus_lanes and vehicle_type != "bus":
+                        traci.vehicle.rerouteTraveltime(vehicle_id)
+                        traci.vehicle.changeLane(vehicle_id, 1, 50)
+            if action == 1:
+                for vehicle_id in traci.vehicle.getIDList():
+                    vehicle_type = traci.vehicle.getVehicleClass(vehicle_id)
+                    if vehicle_type != "bus":
+                        traci.vehicle.rerouteTraveltime(vehicle_id)
+            
 
     def _get_obs(self):
         lane_ids = self.get_bus_lanes()
