@@ -11,7 +11,7 @@ import numpy as np
 
 def train():
     num_episodes = 300  # More episodes for better training
-    max_steps = 6000
+    max_steps = 6001
     state_size = 10
     action_size = 2
 
