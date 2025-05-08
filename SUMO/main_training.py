@@ -4,7 +4,7 @@ print(os.getcwd())
 print(sys.executable)
 
 from dqn_agent import DQNAgent
-from SumoBusLaneEnv import SumoBusLaneEnv
+from SUMOBusLaneEnv import SumoBusLaneEnv
 import torch
 import matplotlib.pyplot as plt
 import numpy as np
@@ -26,6 +26,19 @@ def train():
     car_counts = []
     total_vehicle_counts = []
 
+
+    baseline = 0
+    number = 0
+    baseline = int(input("Enter 0 for DQL or 1 for baseline options: "))
+    if(baseline != 0):
+        number = int(input("Enter an 0 for Buses only. Enter 1 for Mixed Traffic: "))
+        if(number == 0):
+            b0 = 0
+        else:
+            b0 = 1
+    else:
+        b0 = 3
+
     for episode in range(num_episodes):
         state = env.reset()
 
@@ -39,8 +52,14 @@ def train():
 
         while not done and steps < max_steps:
             action = agent.act(state)
-            next_state, reward, done, _ = env.step(action)
-
+            if(b0 == 0):
+                next_state, reward, done, _ = env.step(0)
+            # next_state, reward, done, _ = env.step(action)
+            if(b0 == 1):
+                next_state, reward, done, _ = env.step(1)
+                
+            if(b0 == 3):
+                next_state, reward, done, _ = env.step(action)
             agent.remember(state, action, reward, next_state, done)
             agent.replay()
 
@@ -109,4 +128,5 @@ def train():
     plt.show()
 
 if __name__ == "__main__":
+    
     train()

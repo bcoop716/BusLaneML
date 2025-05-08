@@ -9,13 +9,14 @@ class SumoBusLaneEnv(gym.Env):
     def __init__(self):
         super(SumoBusLaneEnv, self).__init__()
 
-        self.action_space = spaces.Discrete(2)  # 0 = keep bus-only, 1 = allow passengers
+        self.action_space = spaces.Discrete(2)  
+        # 0 is busses only and 1 is mixed traffic
         self.observation_space = spaces.Box(low=0, high=30000, shape=(10,), dtype=np.float32)
 
         self.step_length = 0.1
         self.sumo_cmd = ["sumo", "-c", "low_demand.sumocfg", "--start", "--step-length", str(self.step_length)]
         self.step_count = 0
-        self.dispatch_interval = 30  # If you later want to simulate bus dispatch intervals
+        self.dispatch_interval = 30  # Not used but can be implemented in future
         self.count = 0
         self.buscount = 0
         self.carcount = 0
