@@ -23,14 +23,26 @@ This repository contains our final project for the **Intro to Machine Learning**
 ├── main_training.py              # Main training loop for RL<br>
 ├── analyze_results.py            # Evaluation and visualization of agent performance<br>
 ├── run.py                        # Testing/inference script to run trained models<br>
-│<br><br>
+│<br>
 ├── high_demand.*                 # SUMO configs for high traffic demand<br>
 ├── low_demand.*                  # SUMO configs for low traffic demand<br>
 ├── high_flow.xml                 # Vehicle flow settings for high demand<br>
 ├── low_flow.xml                  # Vehicle flow settings for low demand<br>
-│<br><br>
+│<br>
 ├── SUMO_bus_lanes.*              # Base network and simulation configs (net, rou, sumocfg)<br>
 ├── *.rou.alt.xml                 # Alternate route configuration files<br>
 ├── *.IDZone.Identifier           # Optional identifier files for routing/zoning<br>
-│<br><br>
-└── requirements.txt              # Python dependencies<br>
+│<br>
+└── requirements.txt              # Python dependencies<br><br>
+
+
+
+
+---
+
+## ⚙️ Setup Instructions
+
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/your-username/sumo-traffic-rl.git
+   cd sumo-traffic-rl
