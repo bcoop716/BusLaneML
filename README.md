@@ -62,27 +62,42 @@ This repository contains our final project for the **Intro to Machine Learning**
 
 
 
-   🚀 Running the Code
-Train the RL Agent
+---
 
-bash
-Copy
-Edit
-python main_training.py
-This will start training a DQN agent on the selected SUMO environment.
+## 🚀 Running the Code
 
-Test or Simulate a Trained Model
+1. **Train the RL Agent**  
+   ```bash
+   python main_training.py
+   ```
+   This will start training a DQN agent on the selected SUMO environment.
+2. **Test or Simulate a Trained Model**
+   ```bash
+   python run.py
+   ```
+   This runs the simulation using a trained model.
+3. **Visualize and Analyze Results**
+    ```bash
+    python analyze_results.py
+    ```
+    This script generates plots and metrics for evaluating the model’s performance.
 
-bash
-Copy
-Edit
-python run.py
-This runs the simulation using a trained model.
 
-Visualize and Analyze Results
 
-bash
-Copy
-Edit
-python analyze_results.py
-This script generates plots and metrics for evaluating the model’s performance.
+--- 
+
+## 🧪 Simulation Scenarios
+**The environment supports multiple traffic demands:**
+1. high_demand.* – For high vehicle density scenarios
+2. low_demand.* – For low traffic scenarios
+3. SUMO_bus_lanes.* – Default or balanced scenario setup
+<br>
+You can switch configurations in the SUMOBusLaneEnv.py or modify the *.sumocfg files as needed.
+
+
+---
+
+## 📊 Output
+Trained results, episode statistics, and wait time graphs are automatically generated and stored in the local directory or specified output folders. Use analyze_results.py for deeper insight into agent performance under varying demand.
+
+
