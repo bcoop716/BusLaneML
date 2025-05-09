@@ -2,7 +2,7 @@
 
 ## Group Members
 - Brandon Cooper  
-- Gredrick Dillistone  
+- Fredrick Dillistone  
 - Raghav Doshi  
 - Caden Thompson  
 - Danny Wang  
