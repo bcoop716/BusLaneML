@@ -48,10 +48,10 @@ This repository contains our final project for the **Intro to Machine Learning**
    cd sumo-traffic-rl
    ```
 2. **Create a virtua environment**
-  ```bash
-  python -m venv venv
-  source venv/bin/activate  # Windows: venv\Scripts\activate
-  ```
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # Windows: venv\Scripts\activate
+   ```
 3. **Install dependencies**
     ```bash
     pip install -r requirements.txt
