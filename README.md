@@ -34,5 +34,3 @@ This repository contains our final project for the **Intro to Machine Learning**
 ├── *.rou.alt.xml # Alternate route configuration files
 ├── *.IDZone.Identifier # Optional identifier files for routing/zoning
 └── requirements.txt # Python dependencies
-
-
