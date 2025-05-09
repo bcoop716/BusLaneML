@@ -47,8 +47,7 @@ This repository contains our final project for the **Intro to Machine Learning**
    git clone https://github.com/your-username/sumo-traffic-rl.git
    cd sumo-traffic-rl
    ```
-
-2 **Create a virtua environment**
+2. **Create a virtua environment**
   ```bash
   python -m venv venv
   source venv/bin/activate  # Windows: venv\Scripts\activate
