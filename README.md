@@ -18,8 +18,8 @@ This repository contains our final project for the **Intro to Machine Learning**
 - Custom model tuning and interpretation
 
 ## 🗂️ Project Structure
-├── SUMOBusLaneEnv.py             # Custom SUMO Gym-like environment
-├── dqn_agent.py                  # DQN agent implementation
+├── SUMOBusLaneEnv.py<br>            # Custom SUMO Gym-like environment
+├── dqn_agent.py<br>                  # DQN agent implementation
 ├── main_training.py              # Main training loop for RL
 ├── analyze_results.py            # Evaluation and visualization of agent performance
 ├── run.py                        # Testing/inference script to run trained models
