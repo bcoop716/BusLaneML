@@ -18,19 +18,19 @@ This repository contains our final project for the **Intro to Machine Learning**
 - Custom model tuning and interpretation
 
 ## 🗂️ Project Structure
-
-├── SUMOBusLaneEnv.py # Custom SUMO Gym-like environment
-├── dqn_agent.py # DQN agent implementation
-├── main_training.py # Main training loop for RL
-├── analyze_results.py # Evaluation and visualization of agent performance
-├── run.py # Testing/inference script to run trained models
+├── SUMOBusLaneEnv.py             # Custom SUMO Gym-like environment
+├── dqn_agent.py                  # DQN agent implementation
+├── main_training.py              # Main training loop for RL
+├── analyze_results.py            # Evaluation and visualization of agent performance
+├── run.py                        # Testing/inference script to run trained models
 │
-├── high_demand.* # SUMO configs for high traffic demand
-├── low_demand.* # SUMO configs for low traffic demand
-├── high_flow.xml # Vehicle flow settings for high demand
-├── low_flow.xml # Vehicle flow settings for low demand
-├── SUMO_bus_lanes.* # Base network and simulation configs (net, rou, sumocfg)
+├── high_demand.*                 # SUMO configs for high traffic demand
+├── low_demand.*                  # SUMO configs for low traffic demand
+├── high_flow.xml                 # Vehicle flow settings for high demand
+├── low_flow.xml                  # Vehicle flow settings for low demand
 │
-├── *.rou.alt.xml # Alternate route configuration files
-├── *.IDZone.Identifier # Optional identifier files for routing/zoning
-└── requirements.txt # Python dependencies
+├── SUMO_bus_lanes.*              # Base network and simulation configs (net, rou, sumocfg)
+├── *.rou.alt.xml                 # Alternate route configuration files
+├── *.IDZone.Identifier           # Optional identifier files for routing/zoning
+│
+└── requirements.txt              # Python dependencies
