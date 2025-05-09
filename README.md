@@ -56,6 +56,6 @@ This repository contains our final project for the **Intro to Machine Learning**
     ```bash
     pip install -r requirements.txt
     ```
-4. **Ensure SUMO is installed**
+4. **Ensure SUMO is installed**<br>
     Download and install SUMO from: https://www.eclipse.dev/sumo/
     Make sure the sumo and sumo-gui binaries are in your system's PATH.
