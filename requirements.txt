@@ -1,0 +1,14 @@
+numpy
+matplotlib
+pandas
+gym
+torch
+tensorflow  # optional if some modules use TF; remove if not used
+keras        # optional if used for DQN agent
+opencv-python
+scikit-learn
+pytest
+setuptools
+wheel
+lxml         # required for SUMO file parsing
+traci        # Python interface for SUMO (comes with SUMO tools)
