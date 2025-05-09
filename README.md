@@ -18,19 +18,19 @@ This repository contains our final project for the **Intro to Machine Learning**
 - Custom model tuning and interpretation
 
 ## 🗂️ Project Structure
-├── SUMOBusLaneEnv.py<br>            # Custom SUMO Gym-like environment
-├── dqn_agent.py<br>                  # DQN agent implementation
-├── main_training.py              # Main training loop for RL
-├── analyze_results.py            # Evaluation and visualization of agent performance
-├── run.py                        # Testing/inference script to run trained models
+├── SUMOBusLaneEnv.py            # Custom SUMO Gym-like environment<br>
+├── dqn_agent.py                  # DQN agent implementation<br>
+├── main_training.py              # Main training loop for RL<br>
+├── analyze_results.py            # Evaluation and visualization of agent performance<br>
+├── run.py                        # Testing/inference script to run trained models<br>
 │
-├── high_demand.*                 # SUMO configs for high traffic demand
-├── low_demand.*                  # SUMO configs for low traffic demand
-├── high_flow.xml                 # Vehicle flow settings for high demand
-├── low_flow.xml                  # Vehicle flow settings for low demand
+├── high_demand.*                 # SUMO configs for high traffic demand<br>
+├── low_demand.*                  # SUMO configs for low traffic demand<br>
+├── high_flow.xml                 # Vehicle flow settings for high demand<br>
+├── low_flow.xml                  # Vehicle flow settings for low demand<br>
 │
-├── SUMO_bus_lanes.*              # Base network and simulation configs (net, rou, sumocfg)
-├── *.rou.alt.xml                 # Alternate route configuration files
-├── *.IDZone.Identifier           # Optional identifier files for routing/zoning
+├── SUMO_bus_lanes.*              # Base network and simulation configs (net, rou, sumocfg)<br>
+├── *.rou.alt.xml                 # Alternate route configuration files<br>
+├── *.IDZone.Identifier           # Optional identifier files for routing/zoning<br>
 │
-└── requirements.txt              # Python dependencies
+└── requirements.txt              # Python dependencies<br>
