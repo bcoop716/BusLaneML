@@ -59,3 +59,30 @@ This repository contains our final project for the **Intro to Machine Learning**
 4. **Ensure SUMO is installed**<br>
     Download and install SUMO from: https://www.eclipse.dev/sumo/
     Make sure the sumo and sumo-gui binaries are in your system's PATH.
+
+
+
+   🚀 Running the Code
+Train the RL Agent
+
+bash
+Copy
+Edit
+python main_training.py
+This will start training a DQN agent on the selected SUMO environment.
+
+Test or Simulate a Trained Model
+
+bash
+Copy
+Edit
+python run.py
+This runs the simulation using a trained model.
+
+Visualize and Analyze Results
+
+bash
+Copy
+Edit
+python analyze_results.py
+This script generates plots and metrics for evaluating the model’s performance.
