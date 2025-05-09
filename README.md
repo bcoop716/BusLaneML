@@ -1,16 +1,19 @@
-Group 15 - Intro to Machine Learning
+# Intro to Machine Learning – Group 15
 
-**Group Members**
-Brandon Cooper
-Gredrick Dillistone
-Raghav Dosh
-Caden Thompson
-Danny Wang
+## Group Members
+- Brandon Cooper  
+- Gredrick Dillistone  
+- Raghav Doshi  
+- Caden Thompson  
+- Danny Wang  
 
-**Codebase Overview**
+---
 
+## 📦 Project Overview
 
-
-
-**How to Run Code**
+This repository contains our final project for the **Intro to Machine Learning** course. The project showcases practical implementations of core ML concepts including:
+- Data preprocessing
+- Model training and evaluation
+- Visualization of results
+- Custom model tuning and interpretation
 
