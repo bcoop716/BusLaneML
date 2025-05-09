@@ -9,13 +9,13 @@ class SumoBusLaneEnv(gym.Env):
     def __init__(self):
         super(SumoBusLaneEnv, self).__init__()
 
-        self.action_space = spaces.Discrete(2)  # 0 = keep bus-only, 1 = allow passengers
+        self.action_space = spaces.Discrete(2) 
         self.observation_space = spaces.Box(low=0, high=30000, shape=(10,), dtype=np.float32)
 
         self.step_length = 0.1
         self.sumo_cmd = ["sumo", "-c", "low_demand.sumocfg", "--start", "--step-length", str(self.step_length)]
         self.step_count = 0
-        self.dispatch_interval = 30  # If you later want to simulate bus dispatch intervals
+        self.dispatch_interval = 30  
         self.count = 0
         self.buscount = 0
         self.carcount = 0
@@ -74,7 +74,7 @@ class SumoBusLaneEnv(gym.Env):
             traci.close()
 
     def _apply_action(self, action):
-        if self.step_count % 300 == 0:  # Only allow lane permission change every 300 steps (~30 seconds real-time)
+        if self.step_count % 300 == 0: 
             bus_lanes = self.get_bus_lanes()
             allowed = ["bus", "passenger"] if action == 1 else ["bus"]
             for lane in bus_lanes:
@@ -98,7 +98,7 @@ class SumoBusLaneEnv(gym.Env):
     def _collect_metrics(self):
         arrived_vehicles = traci.simulation.getArrivedIDList()
         for vehicle_id in arrived_vehicles:
-            self.count = self.count + 1 #if traci.vehicle.getVehicleClass(vehicle_id) == BUS_CLASS_ID:
+            self.count = self.count + 1 
              #   self.buscount = self.buscount + 1
             #if traci.vehicle.getVehicleClass(vehicle_id) == CAR_CLASS_ID:
              #       self.carcount = self.carcount + 1
